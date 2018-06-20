@@ -9,8 +9,8 @@ echo current dir is $PWD
 export PYTHONPATH=$PYTHONPATH:$DIR:$DIR/slim:$DIR/object_detection
 
 # 定义各目录
-output_dir=/output  # 训练目录
-dataset_dir= /data/ljl159357-2/object # 数据集目录，这里是写死的，记得修改
+output_dir =/output  # 训练目录
+dataset_dir =/data/lowkey159357/week9 # 数据集目录，这里是写死的，记得修改
 
 train_dir=$output_dir/train
 checkpoint_dir=$train_dir
@@ -25,10 +25,6 @@ pipeline_config_path=$output_dir/$config
 # rm -rvf $output_dir/*
 
 # 因为dataset里面的东西是不允许修改的，所以这里要把config文件复制一份到输出目录
-echo "############dataset begin#################"
-tail -50 $dataset_dir/$config
-echo "############"dataset end" #################"
-
 cp  $config  $pipeline_config_path
 
 echo "############"pipeline_config_path begin" #################"
